@@ -1,0 +1,54 @@
+/* App.css */
+
+/* Style for BotCollection component */
+.BotCollection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default list padding */
+  }
+  
+  .BotCollection li {
+    flex: 0 0 200px; /* Set the width for each bot item */
+    margin: 10px; /* Add some space between bot items */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Style for YourBotArmy component */
+  .YourBotArmy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default list padding */
+  }
+  
+  .YourBotArmy li {
+    flex: 0 0 200px; /* Set the width for each bot item */
+    margin: 10px; /* Add some space between bot items */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+  }
+  /* App.css */
+
+/* ... (Other styles) */
+
+.DischargeButton {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* ... (Other styles) */
+  
