@@ -1,21 +1,18 @@
 import React from 'react';
-import axios from 'axios';
 
 const YourBotArmy = ({ army, releaseBot, dischargeBot }) => {
-    const handleDischarge = (botId) => {
-        axios.delete(`http://localhost:8001/bots/${botId}`).then(() => {
-          // Remove the bot from the frontend YourBotArmy component
-          dischargeBot(botId);
-        }).catch((error) => {
-          console.error('Error discharging bot:', error);
-        });
-      };
-      
+  if (!Array.isArray(army)) {
+    return null; 
+  }
+
+  const handleDischarge = (botId) => {
+    dischargeBot(botId);
+  };
 
   return (
     <div>
       <h2>Your Bot Army</h2>
-      <ul className="YourBotArmy">
+      <ul>
         {army.map((bot) => (
           <li key={bot.id}>
             <img src={bot.avatar_url} alt={`Avatar - ${bot.name}`} />

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 const BotCollection = ({ addBotToArmy }) => {
   const [bots, setBots] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8001/bots').then((response) => {
-      setBots(response.data);
-    });
+    fetch('http://localhost:8001/bots')
+      .then((response) => response.json())
+      .then((data) => setBots(data))
+      .catch((error) => console.error('Error fetching bots:', error));
   }, []);
 
   return (
