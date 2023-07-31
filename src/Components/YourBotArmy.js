@@ -1,4 +1,3 @@
-// YourBotArmy.js
 import React from 'react';
 
 const YourBotArmy = ({ army, releaseBot, dischargeBot }) => {

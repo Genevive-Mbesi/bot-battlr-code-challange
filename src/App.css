@@ -1,4 +1,3 @@
-
 .DischargeButton {
     background-color: red;
     color: white;
@@ -11,13 +10,11 @@
     margin-left: 5px;
   }
   
- /* styles.css */
 .ReleaseButton {
   background-color: #5c6db8;
   color: white;
 }
 
-/* App.css */
 .App {
   display: flex;
   justify-content: space-around;
