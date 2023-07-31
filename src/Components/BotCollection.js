@@ -1,14 +1,19 @@
+// BotCollection.js
 import React, { useState, useEffect } from 'react';
 
 const BotCollection = ({ addBotToArmy }) => {
   const [bots, setBots] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8001/bots')
+    fetch('https://bot-battlr-server-app.onrender.com/bots')
       .then((response) => response.json())
       .then((data) => setBots(data))
       .catch((error) => console.error('Error fetching bots:', error));
   }, []);
+
+  const handleAddBotToArmy = (bot) => {
+    addBotToArmy(bot);
+  };
 
   return (
     <div>
@@ -25,7 +30,7 @@ const BotCollection = ({ addBotToArmy }) => {
               <p>Bot Class: {bot.bot_class}</p>
               <p>Catchphrase: {bot.catchphrase}</p>
             </div>
-            <button onClick={() => addBotToArmy(bot)}>Add to Army</button>
+            <button onClick={() => handleAddBotToArmy(bot)}>Add to Army</button>
           </li>
         ))}
       </ul>

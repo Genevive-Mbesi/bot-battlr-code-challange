@@ -1,5 +1,5 @@
 # Bot Battlr - Bot Army Builder
-Welcome to Bot Battlr, the one and only spot in the known universe where you can custom build your own Bot Army! This project is a React application that allows you to view a list of available bots and assemble your unique Bot Army.
+ This project is a React application that allows you to view a list of available bots and assemble your unique Bot Army.
 
 # Features
 View profiles of all bots in the BotCollection.
@@ -37,3 +37,4 @@ The application fetches data from the backend using the fetch API. The bot data 
 This project was created as a practice exercise for learning React, components, props, state, events, and data fetching. It is not affiliated with any existing products or companies.
 
 Enjoy building your ultimate Bot Army with Bot Battlr!
+

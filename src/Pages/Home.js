@@ -1,3 +1,4 @@
+// Home.js
 import React, { useState, useEffect } from 'react';
 import BotCollection from '../Components/BotCollection';
 import YourBotArmy from '../Components/YourBotArmy';
@@ -19,7 +20,7 @@ const Home = () => {
   }, []);
 
   const addBotToArmy = (bot) => {
-    if (Array.isArray(army) && !army.some((b) => b.id === bot.id)) {
+    if (!army.some((b) => b.id === bot.id)) {
       setArmy([...army, bot]);
     }
   };
@@ -29,9 +30,13 @@ const Home = () => {
   };
 
   const dischargeBot = (botId) => {
-    fetch(`http://localhost:8001/bots/${botId}`, { method: 'DELETE' })
-      .then(() => {
-        setArmy(army.filter((b) => b.id !== botId));
+    fetch(`https://bot-battlr-server-app.onrender.com/bots/${botId}`, { method: 'DELETE' })
+      .then((response) => {
+        if (response.ok) {
+          setArmy(army.filter((b) => b.id !== botId));
+        } else {
+          console.error('Failed to discharge bot:', response.statusText);
+        }
       })
       .catch((error) => {
         console.error('Error discharging bot:', error);
@@ -39,9 +44,15 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <BotCollection addBotToArmy={addBotToArmy} />
-      <YourBotArmy army={army} releaseBot={releaseBot} dischargeBot={dischargeBot} />
+    <div className="App">
+      <div className="Card">
+        
+        <BotCollection addBotToArmy={addBotToArmy} army={army} />
+      </div>
+      <div className="Card">
+        
+        <YourBotArmy army={army} releaseBot={releaseBot} dischargeBot={dischargeBot} />
+      </div>
     </div>
   );
 };

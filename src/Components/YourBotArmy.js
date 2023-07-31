@@ -1,9 +1,14 @@
+// YourBotArmy.js
 import React from 'react';
 
 const YourBotArmy = ({ army, releaseBot, dischargeBot }) => {
   if (!Array.isArray(army)) {
-    return null; 
+    return null;
   }
+
+  const handleRelease = (bot) => {
+    releaseBot(bot);
+  };
 
   const handleDischarge = (botId) => {
     dischargeBot(botId);
@@ -24,6 +29,9 @@ const YourBotArmy = ({ army, releaseBot, dischargeBot }) => {
               <p>Bot Class: {bot.bot_class}</p>
               <p>Catchphrase: {bot.catchphrase}</p>
             </div>
+            <button className="ReleaseButton" onClick={() => handleRelease(bot)}>
+              Release
+            </button>
             <button className="DischargeButton" onClick={() => handleDischarge(bot.id)}>
               x
             </button>
