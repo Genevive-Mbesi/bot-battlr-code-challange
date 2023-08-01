@@ -31,7 +31,7 @@ src/App.css: CSS styles for the application.
 React
 React Router DOM
 Data Fetching
-The application fetches data from the backend using the fetch API. The bot data is retrieved from the endpoints http://localhost:8001/bots and http://localhost:8001/your-bot-army.
+The application fetches data from the backend using the fetch API. The bot data is retrieved from the endpoints https://bot-battlr-server-app.onrender.com/bots and https://bot-battlr-server-app.onrender.com/your-bot-army.
 
 # Credits
 This project was created as a practice exercise for learning React, components, props, state, events, and data fetching. It is not affiliated with any existing products or companies.
